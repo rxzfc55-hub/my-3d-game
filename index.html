@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>3D City Drive</title>
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+<body>
+
+<div id="errorBox" style="display:none;position:fixed;inset:0;z-index:99999;background:rgba(20,0,0,.95);color:#ff6b6b;font-family:monospace;font-size:13px;padding:16px;overflow:auto;white-space:pre-wrap;direction:ltr;text-align:left;"></div>
+
+</script>
+
+
+<!-- =====================================================
+     LOADING
+===================================================== -->
+
+<div id="loading">
+
+    <div id="loadingCar">
+        🚗
+    </div>
+
+    <div id="loadingTitle">
+        جاري بناء المدينة...
+    </div>
+
+    <div id="loadingBar">
+        <div id="loadingFill"></div>
+    </div>
+
+    <div id="loadingPercent">
+        0%
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     HUD
+===================================================== -->
+
+<div id="speedBox">
+
+    <div id="speed">0</div>
+
+    <div id="speedUnit">
+        كم/س
+    </div>
+
+</div>
+
+
+<div id="gear">
+    D
+</div>
+
+
+<div id="coinsBox">
+
+    <span id="coinsIcon">🪙</span>
+
+    <span id="coins">
+        0
+    </span>
+
+</div>
+
+
+<!-- =====================================================
+     MISSION
+===================================================== -->
+
+<div id="missionPanel">
+
+    <div id="missionTitle">
+        🎯 المهمة الحالية
+    </div>
+
+    <div id="missionText">
+        جاري البحث عن راكب...
+    </div>
+
+    <div id="missionReward">
+        المكافأة: 10 🪙
+    </div>
+
+    <div id="missionDistance">
+        --
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     MAP
+===================================================== -->
+
+<div id="mapContainer">
+
+    <div id="mapTitle">
+        اضغط للخريطة
+    </div>
+
+    <canvas
+        id="miniMap"
+        width="400"
+        height="400">
+    </canvas>
+
+</div>
+
+
+<button id="reset">
+    ⟳ إعادة
+</button>
+
+
+<button id="viewToggle">
+    🚗 داخلي
+</button>
+
+
+<div id="soundHint">
+    🔊 اضغط على الشاشة لتفعيل الصوت
+</div>
+
+
+<div id="missionMessage">
+    المهمة
+</div>
+
+
+<div id="impactFlash"></div>
+
+
+<!-- =====================================================
+     CONTROLS
+===================================================== -->
+
+<div id="controls">
+
+    <div class="controlGroup">
+
+        <div
+            class="control"
+            id="left">
+
+            <div>⬅</div>
+            <div class="controlLabel">
+                يسار
+            </div>
+
+        </div>
+
+        <div
+            class="control"
+            id="right">
+
+            <div>➡</div>
+            <div class="controlLabel">
+                يمين
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="controlGroup">
+
+        <div
+            class="control"
+            id="backward">
+
+            <div>⬇</div>
+            <div class="controlLabel">
+                خلف
+            </div>
+
+        </div>
+
+        <div
+            class="control"
+            id="forward">
+
+            <div>⬆</div>
+            <div class="controlLabel">
+                أمام
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     THREE.JS
+===================================================== -->
+
+
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>
