@@ -1,0 +1,828 @@
+/* =========================================================
+   BASIC
+========================================================= */
+
+*{
+    box-sizing:border-box;
+    -webkit-tap-highlight-color:transparent;
+}
+
+html,
+body{
+
+    margin:0;
+    padding:0;
+
+    width:100%;
+    height:100%;
+
+    overflow:hidden;
+
+    background:#000;
+
+    touch-action:none;
+
+    font-family:
+    Arial,
+    Tahoma,
+    sans-serif;
+}
+
+body{
+    position:fixed;
+    inset:0;
+}
+
+canvas{
+    display:block;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+#loading{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:10000;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#fff;
+
+    background:
+    linear-gradient(
+        150deg,
+        #132a3d,
+        #04080d
+    );
+}
+
+#loadingCar{
+
+    font-size:62px;
+
+    margin-bottom:14px;
+
+    animation:
+    loadingBounce 1s infinite;
+}
+
+@keyframes loadingBounce{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+}
+
+#loadingTitle{
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    margin-bottom:15px;
+}
+
+#loadingBar{
+
+    width:76%;
+
+    max-width:380px;
+
+    height:13px;
+
+    overflow:hidden;
+
+    border-radius:20px;
+
+    background:
+    rgba(255,255,255,.15);
+}
+
+#loadingFill{
+
+    width:0%;
+
+    height:100%;
+
+    background:
+    linear-gradient(
+        90deg,
+        #00dca0,
+        #00aaff
+    );
+
+    transition:width .2s;
+}
+
+#loadingPercent{
+
+    margin-top:8px;
+
+    font-size:12px;
+
+    color:#a9ffff;
+}
+
+
+/* =========================================================
+   SPEED
+========================================================= */
+
+#speedBox{
+
+    position:fixed;
+
+    top:12px;
+
+    right:12px;
+
+    z-index:200;
+
+    min-width:108px;
+
+    padding:9px 15px;
+
+    border-radius:14px;
+
+    text-align:center;
+
+    color:#00ffd0;
+
+    background:
+    rgba(0,0,0,.58);
+
+    border:
+    1px solid
+    rgba(255,255,255,.25);
+
+    pointer-events:none;
+}
+
+#speed{
+
+    font-size:28px;
+
+    line-height:1;
+
+    font-weight:bold;
+}
+
+#speedUnit{
+
+    font-size:10px;
+
+    color:#fff;
+}
+
+
+/* =========================================================
+   GEAR
+========================================================= */
+
+#gear{
+
+    position:fixed;
+
+    top:12px;
+
+    left:12px;
+
+    z-index:200;
+
+    padding:9px 17px;
+
+    border-radius:12px;
+
+    color:#fff;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    background:
+    rgba(0,0,0,.58);
+
+    border:
+    1px solid
+    rgba(255,255,255,.25);
+}
+
+
+/* =========================================================
+   COINS
+========================================================= */
+
+#coinsBox{
+
+    position:fixed;
+
+    top:58px;
+
+    right:12px;
+
+    z-index:220;
+
+    padding:8px 13px;
+
+    border-radius:13px;
+
+    color:#ffd83d;
+
+    font-size:15px;
+
+    font-weight:bold;
+
+    background:
+    rgba(0,0,0,.68);
+
+    border:
+    1px solid
+    rgba(255,216,61,.45);
+
+    box-shadow:
+    0 4px 16px
+    rgba(0,0,0,.25);
+
+    pointer-events:none;
+}
+
+#coinsIcon{
+    font-size:18px;
+}
+
+
+/* =========================================================
+   MISSION PANEL
+========================================================= */
+
+#missionPanel{
+
+    position:fixed;
+
+    top:105px;
+
+    right:12px;
+
+    z-index:230;
+
+    width:235px;
+
+    padding:11px 13px;
+
+    border-radius:15px;
+
+    color:#fff;
+
+    background:
+    rgba(0,0,0,.70);
+
+    border:
+    1px solid
+    rgba(255,255,255,.22);
+
+    box-shadow:
+    0 8px 25px
+    rgba(0,0,0,.25);
+
+    pointer-events:none;
+}
+
+#missionTitle{
+
+    color:#ffd83d;
+
+    font-weight:bold;
+
+    font-size:14px;
+
+    margin-bottom:5px;
+}
+
+#missionText{
+
+    font-size:12px;
+
+    line-height:1.55;
+
+    color:#f2f2f2;
+}
+
+#missionReward{
+
+    margin-top:5px;
+
+    color:#ffd83d;
+
+    font-size:12px;
+
+    font-weight:bold;
+}
+
+#missionDistance{
+
+    margin-top:4px;
+
+    color:#8fffe1;
+
+    font-size:11px;
+}
+
+
+/* =========================================================
+   MAP
+========================================================= */
+
+#mapContainer{
+
+    position:fixed;
+
+    top:58px;
+
+    left:12px;
+
+    z-index:300;
+
+    width:125px;
+
+    height:125px;
+
+    border-radius:14px;
+
+    overflow:hidden;
+
+    background:
+    rgba(7,17,11,.9);
+
+    border:
+    1px solid
+    rgba(255,255,255,.3);
+
+    box-shadow:
+    0 5px 20px
+    rgba(0,0,0,.35);
+}
+
+#miniMap{
+
+    width:100%;
+
+    height:100%;
+
+    display:block;
+}
+
+#mapContainer.full{
+
+    top:50%;
+
+    left:50%;
+
+    width:
+    min(92vw,520px);
+
+    height:
+    min(92vw,520px);
+
+    transform:
+    translate(-50%,-50%);
+
+    border-radius:20px;
+
+    z-index:9000;
+
+    box-shadow:
+    0 20px 60px
+    rgba(0,0,0,.7);
+}
+
+#mapTitle{
+
+    position:absolute;
+
+    top:8px;
+
+    left:50%;
+
+    transform:
+    translateX(-50%);
+
+    z-index:2;
+
+    color:#fff;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+    padding:5px 10px;
+
+    border-radius:8px;
+
+    background:
+    rgba(0,0,0,.6);
+
+    pointer-events:none;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+#reset{
+
+    position:fixed;
+
+    top:12px;
+
+    left:50%;
+
+    transform:
+    translateX(-50%);
+
+    z-index:250;
+
+    padding:8px 14px;
+
+    border-radius:10px;
+
+    border:
+    1px solid
+    rgba(255,255,255,.3);
+
+    color:#fff;
+
+    background:
+    rgba(0,0,0,.6);
+}
+
+
+/* =========================================================
+   VIEW TOGGLE
+========================================================= */
+
+#viewToggle{
+
+    position:fixed;
+
+    bottom:26px;
+
+    left:50%;
+
+    transform:
+    translateX(-50%);
+
+    z-index:250;
+
+    padding:10px 16px;
+
+    border-radius:12px;
+
+    border:
+    1px solid
+    rgba(255,255,255,.3);
+
+    color:#fff;
+
+    font-size:15px;
+
+    background:
+    rgba(0,0,0,.6);
+
+    backdrop-filter:blur(12px);
+
+    -webkit-backdrop-filter:blur(12px);
+
+    box-shadow:
+    0 10px 35px rgba(0,0,0,.28),
+    inset 0 1px 0 rgba(255,255,255,.08);
+}
+
+#viewToggle:active{
+    filter:brightness(1.25);
+}
+
+
+/* =========================================================
+   SOUND
+========================================================= */
+
+#soundHint{
+
+    position:fixed;
+
+    left:50%;
+
+    top:53%;
+
+    transform:
+    translate(-50%,-50%);
+
+    z-index:500;
+
+    padding:10px 15px;
+
+    border-radius:12px;
+
+    color:#fff;
+
+    background:
+    rgba(0,0,0,.7);
+
+    border:
+    1px solid
+    rgba(255,255,255,.2);
+
+    font-size:13px;
+
+    pointer-events:none;
+
+    transition:opacity .6s;
+}
+
+
+/* =========================================================
+   CONTROLS
+========================================================= */
+
+#controls{
+
+    position:fixed;
+
+    left:0;
+    right:0;
+
+    bottom:
+    max(12px,env(safe-area-inset-bottom));
+
+    z-index:400;
+
+    display:flex;
+
+    justify-content:
+    space-between;
+
+    padding:
+    0 14px 12px;
+
+    pointer-events:none;
+}
+
+.controlGroup{
+
+    display:flex;
+
+    gap:10px;
+
+    pointer-events:auto;
+}
+
+.control{
+
+    width:64px;
+
+    height:64px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#fff;
+
+    font-size:25px;
+
+    font-weight:bold;
+
+    user-select:none;
+
+    -webkit-user-select:none;
+
+    background:
+    rgba(255,255,255,.17);
+
+    border:
+    2px solid
+    rgba(255,255,255,.45);
+
+    box-shadow:
+    0 4px 15px
+    rgba(0,0,0,.35);
+
+    transition:
+    transform .08s,
+    background .08s;
+}
+
+.controlLabel{
+
+    font-size:10px;
+
+    margin-top:-1px;
+
+    font-weight:bold;
+}
+
+.control.active{
+
+    transform:
+    scale(.9);
+
+    background:
+    rgba(255,255,255,.42);
+}
+
+
+/* أمام */
+
+#forward{
+
+    background:
+    rgba(0,220,120,.23);
+
+    border-color:
+    rgba(0,255,140,.65);
+}
+
+
+/* خلف */
+
+#backward{
+
+    background:
+    rgba(50,130,255,.23);
+
+    border-color:
+    rgba(90,170,255,.7);
+}
+
+
+/* =========================================================
+   MISSION MESSAGE
+========================================================= */
+
+#missionMessage{
+
+    position:fixed;
+
+    left:50%;
+
+    bottom:120px;
+
+    transform:
+    translateX(-50%)
+    translateY(20px);
+
+    z-index:800;
+
+    padding:11px 18px;
+
+    border-radius:14px;
+
+    color:#fff;
+
+    background:
+    rgba(0,0,0,.82);
+
+    border:
+    1px solid
+    rgba(255,255,255,.25);
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:
+    opacity .3s,
+    transform .3s;
+
+    text-align:center;
+
+    font-size:13px;
+
+    white-space:nowrap;
+}
+
+#missionMessage.show{
+
+    opacity:1;
+
+    transform:
+    translateX(-50%)
+    translateY(0);
+}
+
+
+/* =========================================================
+   DAMAGE FLASH
+========================================================= */
+
+#impactFlash{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:700;
+
+    pointer-events:none;
+
+    background:
+    rgba(255,30,30,.18);
+
+    opacity:0;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:520px){
+
+    .control{
+
+        width:60px;
+
+        height:60px;
+
+        font-size:23px;
+    }
+
+    #mapContainer{
+
+        width:112px;
+
+        height:112px;
+    }
+
+    #missionPanel{
+
+        width:205px;
+
+        top:105px;
+
+        font-size:11px;
+    }
+
+    #missionMessage{
+
+        max-width:90vw;
+
+        white-space:normal;
+
+        font-size:12px;
+    }
+}
+
+
+/* =========================================================
+   PREMIUM UI
+========================================================= */
+#speedBox,#gear,#coinsBox,#missionPanel,#mapContainer,#reset{
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+    box-shadow:0 10px 35px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,255,255,.08);
+}
+#speedBox{min-width:122px; border-color:rgba(0,255,208,.32);}
+#speed{font-variant-numeric:tabular-nums; text-shadow:0 0 18px rgba(0,255,208,.35);}
+#gear{border-color:rgba(255,255,255,.28);}
+#missionPanel{border-color:rgba(255,216,61,.25);}
+.control{
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    box-shadow:0 8px 24px rgba(0,0,0,.32), inset 0 1px 0 rgba(255,255,255,.14);
+}
+.control:active{filter:brightness(1.2);}
+#loading{background:radial-gradient(circle at 50% 35%,#173e55 0,#07131c 42%,#020508 100%);}
+#loadingBar{box-shadow:0 0 24px rgba(0,220,160,.18);}
+#loadingFill{box-shadow:0 0 18px rgba(0,220,160,.5);}
+#mapContainer.full{backdrop-filter:blur(5px);}
+@media(max-width:520px){
+    #speedBox{top:10px;right:10px;min-width:100px;padding:8px 12px;}
+    #speed{font-size:25px;}
+    #missionPanel{top:98px;right:10px;}
+    #gear{top:10px;left:10px;}
+    #mapContainer{top:56px;left:10px;}
+}
